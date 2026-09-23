@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no", viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Take My Muffin × Raw Gravity — 45% OFF</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@ a {
   justify-content: center;
   align-items: flex-start;
   padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: calc(35px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .mobile-stage {
@@ -61,6 +61,7 @@ a {
   font-family: 'Comic Neue', cursive;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
+  outline: 2px solid red;
 }
 
 .mobile-stage .background {
@@ -79,6 +80,9 @@ a {
   position: relative;
   z-index: 2;
   width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .top-bar-mobile {
@@ -438,7 +442,8 @@ a {
 .cta-mobile-wrap {
   display: flex;
   justify-content: center;
-  margin-top: 23px;
+  margin-top: auto;
+  transform: translateY(-100px);
 }
 
 .cta {
@@ -475,6 +480,7 @@ a {
   font-size: 13px;
   white-space: nowrap;
   color: #c9c9c9;
+  transform: translateY(-80px);
 }
 
 /* =========================================
@@ -920,31 +926,24 @@ function fitMobile() {
   if (!stage) return;
 
   const vv = window.visualViewport;
+
   const viewportWidth = vv ? vv.width : window.innerWidth;
   const viewportHeight = vv ? vv.height : window.innerHeight;
 
-  const page = stage.parentElement;
-  const topPadding = parseFloat(
-    getComputedStyle(document.querySelector('.mobile-page')).paddingTop
-  ) || 0;
+  const page = document.querySelector('.mobile-page');
 
-  const bottomPadding = parseFloat(
-    getComputedStyle(document.querySelector('.mobile-page')).paddingBottom
-  ) || 0;
+  const topPadding =
+    parseFloat(getComputedStyle(page).paddingTop) || 0;
 
-  const availableHeight = Math.max(
-    120,
-    viewportHeight - topPadding - bottomPadding
-  );
+  const bottomPadding =
+    parseFloat(getComputedStyle(page).paddingBottom) || 0;
 
-  const h = stage.offsetHeight;
+  const availableHeight =
+    Math.max(120, viewportHeight - topPadding - bottomPadding);
 
-  const k = Math.min(
-    1,
-    viewportWidth / 440,
-    availableHeight / h
-  );
+  const k = Math.min(1, viewportWidth / 440);
 
+  stage.style.height = (availableHeight / k) + 'px';
   stage.style.transform = 'scale(' + k + ')';
 }
 
