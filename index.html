@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Take My Muffin × Raw Gravity — 45% OFF</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Archivo+Black&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+.mobile-page {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #0b0b0b;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+}
+
+.mobile-stage {
+  position: relative;
+  width: 440px;
+  height: auto;
+  flex: none;
+  transform-origin: top center;
+  overflow: hidden;
+  background: #0b0b0b;
+  color: #ffffff;
+  font-family: 'Comic Neue', cursive;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.mobile-stage .background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 120%;
+  left: 0;
+  top: calc(-10% + 50px);
+  object-fit: fill;
+  object-position: center top;
+  pointer-events: none;
+}
+
+.mobile-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.top-bar-mobile {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 20px;
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
+.top-bar-mobile .x {
+  font-size: 13px;
+}
+
+.badge-mobile {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.badge-mobile span {
+  font-family: 'Comic Neue', cursive;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background: #000000;
+  border: 2px solid #F5C430;
+  border-radius: 8px;
+  padding: 6px 22px 7px;
+  transform: rotate(-3deg);
+}
+
+.offer-mobile {
+  text-align: center;
+  margin-top: 14px;
+  font-family: 'Luckiest Guy', cursive;
+  line-height: 0.82;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+}
+
+.offer-mobile .percent {
+  font-size: 62px;
+  text-shadow:
+    -4px -4px 0 #111, 4px -4px 0 #111,
+    -4px 4px 0 #111, 4px 4px 0 #111,
+    5px 5px 0 #111,
+    0 0 0 #E9B717,
+    0 1px 0 #E9B717,
+    0 2px 0 #E9B717,
+    0 3px 0 #E9B717,
+    0 4px 0 #E9B717,
+    0 5px 0 #E9B717,
+    0 6px 0 #E9B717,
+    0 7px 0 #E9B717,
+    0 8px 0 #E9B717,
+    1px 0 0 #E9B717,
+    1px 4px 0 #E9B717,
+    1px 8px 0 #E9B717,
+    2px 0 0 #E9B717,
+    2px 4px 0 #E9B717,
+    2px 8px 0 #E9B717,
+    3px 0 0 #E9B717,
+    3px 4px 0 #E9B717,
+    3px 8px 0 #E9B717,
+    4px 0 0 #E9B717,
+    4px 1px 0 #E9B717,
+    4px 2px 0 #E9B717,
+    4px 3px 0 #E9B717,
+    4px 4px 0 #E9B717,
+    4px 5px 0 #E9B717,
+    4px 6px 0 #E9B717,
+    4px 7px 0 #E9B717,
+    4px 8px 0 #E9B717,
+    5px 0 0 #E9B717,
+    5px 4px 0 #E9B717,
+    5px 8px 0 #E9B717,
+    6px 0 0 #E9B717,
+    6px 4px 0 #E9B717,
+    6px 8px 0 #E9B717,
+    7px 0 0 #E9B717,
+    7px 4px 0 #E9B717,
+    7px 8px 0 #E9B717,
+    8px 0 0 #E9B717,
+    8px 1px 0 #E9B717,
+    8px 2px 0 #E9B717,
+    8px 3px 0 #E9B717,
+    8px 4px 0 #E9B717,
+    8px 5px 0 #E9B717,
+    8px 6px 0 #E9B717,
+    8px 7px 0 #E9B717,
+    8px 8px 0 #E9B717;
+}
+
+.offer-mobile .off {
+  font-size: 42px;
+  margin-top: 10px;
+  text-shadow:
+    -4px -4px 0 #111, 4px -4px 0 #111,
+    -4px 4px 0 #111, 4px 4px 0 #111,
+    5px 5px 0 #111,
+    0 0 0 #E9B717,
+    0 1px 0 #E9B717,
+    0 2px 0 #E9B717,
+    0 3px 0 #E9B717,
+    0 4px 0 #E9B717,
+    0 5px 0 #E9B717,
+    0 6px 0 #E9B717,
+    0 7px 0 #E9B717,
+    0 8px 0 #E9B717,
+    1px 0 0 #E9B717,
+    1px 4px 0 #E9B717,
+    1px 8px 0 #E9B717,
+    2px 0 0 #E9B717,
+    2px 4px 0 #E9B717,
+    2px 8px 0 #E9B717,
+    3px 0 0 #E9B717,
+    3px 4px 0 #E9B717,
+    3px 8px 0 #E9B717,
+    4px 0 0 #E9B717,
+    4px 1px 0 #E9B717,
+    4px 2px 0 #E9B717,
+    4px 3px 0 #E9B717,
+    4px 4px 0 #E9B717,
+    4px 5px 0 #E9B717,
+    4px 6px 0 #E9B717,
+    4px 7px 0 #E9B717,
+    4px 8px 0 #E9B717,
+    5px 0 0 #E9B717,
+    5px 4px 0 #E9B717,
+    5px 8px 0 #E9B717,
+    6px 0 0 #E9B717,
+    6px 4px 0 #E9B717,
+    6px 8px 0 #E9B717,
+    7px 0 0 #E9B717,
+    7px 4px 0 #E9B717,
+    7px 8px 0 #E9B717,
+    8px 0 0 #E9B717,
+    8px 1px 0 #E9B717,
+    8px 2px 0 #E9B717,
+    8px 3px 0 #E9B717,
+    8px 4px 0 #E9B717,
+    8px 5px 0 #E9B717,
+    8px 6px 0 #E9B717,
+    8px 7px 0 #E9B717,
+    8px 8px 0 #E9B717;
+}
+
+.steps-mobile {
+  width: 380px;
+  margin: 20px auto 0;
+  position: relative;
+}
+
+.steps-mobile > img {
+  display: block;
+  width: 100%;
+}
+
+.step-text {
+  position: absolute;
+  color: #000000;
+}
+
+.step-text.one {
+  right: 45px;
+  top: 25.5px;
+  width: 73%;
+  text-align: right;
+  transform: rotate(-2deg);
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.15;
+}
+
+.step-text.two {
+  left: 74px;
+  top: 186.4px;
+  width: 77%;
+  transform: rotate(2deg);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.step-text.three {
+  left: 74px;
+  top: 359.5px;
+  width: 73%;
+  transform: rotate(-2deg);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.15;
+}
+
+.highlight {
+  padding: 1px 4px;
+  background: #FED039;
+}
+
+.code-highlight {
+  background: #111111;
+  color: #FED039;
+  padding: 1px 5px;
+  line-height: 0;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 15px;
+}
+
+.fake-box.one {
+  position: absolute;
+  left: 9.42%;
+  top: 11.41%;
+  width: 81.09%;
+  height: 13.94%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.fake-box.one .buy {
+  width: 241px;
+  height: 37px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #0F1111;
+  background: #FFA41C;
+}
+
+.fake-box.two {
+  position: absolute;
+  left: 8.9%;
+  top: 47.72%;
+  width: 81.16%;
+  height: 13.6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.fake-box.two .inner {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transform: scale(.95);
+  transform-origin: center;
+}
+
+.fake-box.two .title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0F1111;
+  white-space: nowrap;
+}
+
+.fake-box.two .link {
+  font-size: 13px;
+  color: #2E6CA8;
+  white-space: nowrap;
+}
+
+.fake-box.three {
+  position: absolute;
+  left: 9.12%;
+  top: 79.09%;
+  width: 81.16%;
+  height: 15.63%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 14px;
+  font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.fake-box.three .inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  transform: scale(.9);
+  transform-origin: center;
+}
+
+.fake-box.three .plus {
+  flex: none;
+  font-size: 27px;
+  color: #cfcfcf;
+  line-height: 1;
+  margin-bottom: 1px;
+}
+
+.fake-box.three .field-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fake-box.three .field-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F1111;
+  white-space: nowrap;
+}
+
+.fake-box.three .field-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fake-box.three .field {
+  flex: 1;
+  min-width: 0;
+  width: 230px;
+  height: 26px;
+  border: 1px solid #c9cdd1;
+  border-radius: 6px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #0F1111;
+}
+
+.fake-box.three .apply {
+  flex: none;
+  height: 27px;
+  border: 1px solid #c9cdd1;
+  border-radius: 999px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 13px;
+  color: #0F1111;
+}
+
+.cta-mobile-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 23px;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 350px;
+  height: 55px;
+  border-radius: 12px;
+  background: linear-gradient(#FFCB1E, #F7A80F);
+  box-shadow: 0 4px 0 rgba(120,70,0,.55);
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 18px;
+  letter-spacing: .02em;
+  color: #141414;
+  transition: background .15s ease;
+}
+
+.cta:hover {
+  background: linear-gradient(#FF9B1A, #FF7A00);
+}
+
+.cta .arrow {
+  font-size: 19px;
+}
+
+.small-note {
+  text-align: center;
+  margin-top: 9px;
+  padding: 0 8px;
+  font-family: 'Comic Neue', cursive;
+  font-weight: 400;
+  font-size: 13px;
+  white-space: nowrap;
+  color: #c9c9c9;
+}
+
+/* =========================================
+   DESKTOP
+   ========================================= */
+
+.desktop-page {
+  display: none;
+}
+
+/* =========================================
+   SWITCH
+   ========================================= */
+
+@media (min-width: 768px) {
+
+  .mobile-page {
+    display: none;
+  }
+
+  .desktop-page {
+    display: block;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: #0b0b0b;
+  }
+
+  .desktop-page .background {
+    position: absolute;
+    left: -10%;
+    top: -10%;
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+  }
+
+  .desktop-topbar {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 21px;
+    letter-spacing: .01em;
+  }
+
+  .desktop-topbar .x {
+    font-size: 18px;
+  }
+
+  .desktop-area {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 56px;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  .desktop-stage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1440px;
+    height: 844px;
+    margin-left: -720px;
+    margin-top: -422px;
+    transform-origin: center center;
+    font-family: 'Comic Neue', cursive;
+    color: #ffffff;
+  }
+
+  .desktop-left {
+    position: absolute;
+    left: 150px;
+    top: 0;
+    bottom: 0;
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .desktop-badge {
+    zoom: 1.6;
+    transform-origin: left center;
+    font-family: 'Comic Neue', cursive;
+    font-weight: 700;
+    font-size: 13px;
+    color: #ffffff;
+    letter-spacing: .05em;
+    background: #000000;
+    border: 2px solid #F5C430;
+    border-radius: 8px;
+    padding: 6px 22px 7px;
+    margin-left: 4px;
+    transform: rotate(-3deg);
+  }
+
+  .desktop-offer {
+    zoom: 3;
+    margin-top: 12px;
+    font-family: 'Luckiest Guy', cursive;
+    line-height: .82;
+    letter-spacing: .01em;
+    color: #ffffff;
+  }
+
+  .desktop-offer .percent,
+  .desktop-offer .off {
+    text-shadow:
+      -4px -4px 0 #111, 4px -4px 0 #111,
+      -4px 4px 0 #111, 4px 4px 0 #111,
+      5px 5px 0 #111,
+      0 0 0 #E9B717,
+      0 1px 0 #E9B717,
+      0 2px 0 #E9B717,
+      0 3px 0 #E9B717,
+      0 4px 0 #E9B717,
+      0 5px 0 #E9B717,
+      0 6px 0 #E9B717,
+      0 7px 0 #E9B717,
+      0 8px 0 #E9B717,
+      1px 0 0 #E9B717,
+      1px 4px 0 #E9B717,
+      1px 8px 0 #E9B717,
+      2px 0 0 #E9B717,
+      2px 4px 0 #E9B717,
+      2px 8px 0 #E9B717,
+      3px 0 0 #E9B717,
+      3px 4px 0 #E9B717,
+      3px 8px 0 #E9B717,
+      4px 0 0 #E9B717,
+      4px 1px 0 #E9B717,
+      4px 2px 0 #E9B717,
+      4px 3px 0 #E9B717,
+      4px 4px 0 #E9B717,
+      4px 5px 0 #E9B717,
+      4px 6px 0 #E9B717,
+      4px 7px 0 #E9B717,
+      4px 8px 0 #E9B717,
+      5px 0 0 #E9B717,
+      5px 4px 0 #E9B717,
+      5px 8px 0 #E9B717,
+      6px 0 0 #E9B717,
+      6px 4px 0 #E9B717,
+      6px 8px 0 #E9B717,
+      7px 0 0 #E9B717,
+      7px 4px 0 #E9B717,
+      7px 8px 0 #E9B717,
+      8px 0 0 #E9B717,
+      8px 1px 0 #E9B717,
+      8px 2px 0 #E9B717,
+      8px 3px 0 #E9B717,
+      8px 4px 0 #E9B717,
+      8px 5px 0 #E9B717,
+      8px 6px 0 #E9B717,
+      8px 7px 0 #E9B717,
+      8px 8px 0 #E9B717;
+  }
+
+  .desktop-offer .percent {
+    font-size: 62px;
+  }
+
+  .desktop-offer .off {
+    font-size: 42px;
+    margin-top: 10px;
+  }
+
+  .desktop-cta-group {
+    margin-top: 34px;
+    zoom: 1.3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  .desktop-right {
+    position: absolute;
+    right: 150px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .desktop-steps {
+    width: 380px;
+    position: relative;
+    transform: scale(1.58);
+    transform-origin: center;
+  }
+
+  .desktop-steps > img {
+    display: block;
+    width: 100%;
+  }
+
+  .desktop-steps .step-text.one {
+    right: 45px;
+    top: 25.5px;
+  }
+
+  .desktop-steps .step-text.two {
+    left: 74px;
+    top: 186.4px;
+  }
+
+  .desktop-steps .step-text.three {
+    left: 74px;
+    top: 359.5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MOBILE -->
+<div class="mobile-page">
+  <div class="mobile-stage" id="mobileStage">
+
+    <img class="background" src="bg-rays.png" alt="">
+
+    <div class="mobile-content">
+
+      <div class="top-bar-mobile">
+        <span>TAKE MY MUFFIN</span>
+        <span class="x">×</span>
+        <span>RAW GRAVITY</span>
+      </div>
+
+      <div class="badge-mobile">
+        <span>DON'T THINK. JUST GRAB IT.</span>
+      </div>
+
+      <div class="offer-mobile">
+        <div class="percent">45%</div>
+        <div class="off">OFF</div>
+      </div>
+
+      <div class="steps-mobile">
+
+        <img src="steps-blank-4.png" alt="Three steps">
+
+        <div class="step-text one">
+          <span>
+            Hit <span class="highlight">Buy Now</span> on our Amazon page.
+          </span>
+        </div>
+
+        <div class="fake-box one">
+          <div class="buy">Buy Now</div>
+        </div>
+
+        <div class="step-text two">
+          <span>
+            At payment tap
+            <span class="highlight">
+              Use a gift card,<br>
+              points, voucher, or promo code.
+            </span>
+          </span>
+        </div>
+
+        <div class="fake-box two">
+          <div class="inner">
+            <div class="title">Paying with Mastercard</div>
+            <div class="link">Use a gift card, points, voucher, or promo code</div>
+          </div>
+        </div>
+
+        <div class="step-text three">
+          <span>
+            Enter <span class="code-highlight">KORNEY45</span> and hit Apply.
+          </span>
+        </div>
+
+        <div class="fake-box three">
+          <div class="inner">
+            <span class="plus">+</span>
+            <div class="field-wrap">
+              <div class="field-title">
+                Enter a gift card, voucher or promotional code
+              </div>
+              <div class="field-row">
+                <div class="field">KORNEY45</div>
+                <div class="apply">Apply</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cta-mobile-wrap">
+        <a
+          class="cta"
+          href="https://www.amazon.com/dp/B0GTWJ3K1R"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>OPEN ON AMAZON</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="small-note">
+        One use per customer. Discount shows at checkout before you pay.
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- DESKTOP -->
+<div class="desktop-page">
+
+  <img class="background" src="bg-rays.png" alt="">
+
+  <div class="desktop-topbar">
+    <span>TAKE MY MUFFIN</span>
+    <span class="x">×</span>
+    <span>RAW GRAVITY</span>
+  </div>
+
+  <div class="desktop-area">
+    <div class="desktop-stage" id="desktopStage">
+
+      <div class="desktop-left">
+
+        <div class="desktop-badge">
+          DON'T THINK. JUST GRAB IT.
+        </div>
+
+        <div class="desktop-offer">
+          <div class="percent">45%</div>
+          <div class="off">OFF</div>
+        </div>
+
+        <div class="desktop-cta-group">
+
+          <a
+            class="cta"
+            href="https://www.amazon.com/dp/B0GTWJ3K1R"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>OPEN ON AMAZON</span>
+            <span class="arrow">→</span>
+          </a>
+
+          <div class="small-note">
+            One use per customer. Discount shows at checkout before you pay.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="desktop-right">
+
+        <div class="desktop-steps">
+
+          <img src="steps-blank-4.png" alt="Three steps">
+
+          <div class="step-text one">
+            <span>
+              Hit <span class="highlight">Buy Now</span> on our Amazon page.
+            </span>
+          </div>
+
+          <div class="fake-box one">
+            <div class="buy">Buy Now</div>
+          </div>
+
+          <div class="step-text two">
+            <span>
+              At payment tap
+              <span class="highlight">
+                Use a gift card,<br>
+                points, voucher, or promo code.
+              </span>
+            </span>
+          </div>
+
+          <div class="fake-box two">
+            <div class="inner">
+              <div class="title">Paying with Mastercard</div>
+              <div class="link">Use a gift card, points, voucher, or promo code</div>
+            </div>
+          </div>
+
+          <div class="step-text three">
+            <span>
+              Enter <span class="code-highlight">KORNEY45</span> and hit Apply.
+            </span>
+          </div>
+
+          <div class="fake-box three">
+            <div class="inner">
+              <span class="plus">+</span>
+              <div class="field-wrap">
+                <div class="field-title">
+                  Enter a gift card, voucher or promotional code
+                </div>
+                <div class="field-row">
+                  <div class="field">KORNEY45</div>
+                  <div class="apply">Apply</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+function fitMobile() {
+  const stage = document.getElementById('mobileStage');
+  if (!stage) return;
+
+  const vv = window.visualViewport;
+  const viewportWidth = vv ? vv.width : window.innerWidth;
+  const viewportHeight = vv ? vv.height : window.innerHeight;
+
+  const page = stage.parentElement;
+  const topPadding = parseFloat(
+    getComputedStyle(document.querySelector('.mobile-page')).paddingTop
+  ) || 0;
+
+  const bottomPadding = parseFloat(
+    getComputedStyle(document.querySelector('.mobile-page')).paddingBottom
+  ) || 0;
+
+  const availableHeight = Math.max(
+    120,
+    viewportHeight - topPadding - bottomPadding
+  );
+
+  const h = stage.offsetHeight;
+
+  const k = Math.min(
+    1,
+    viewportWidth / 440,
+    availableHeight / h
+  );
+
+  stage.style.transform = 'scale(' + k + ')';
+}
+
+function fitDesktop() {
+  const stage = document.getElementById('desktopStage');
+  if (!stage) return;
+
+  const vv = window.visualViewport;
+  const width = vv ? vv.width : window.innerWidth;
+  const height = vv ? vv.height : window.innerHeight;
+
+  const k = Math.min(
+    width / 1440,
+    (height - 56) / 844
+  );
+
+  stage.style.transform = 'scale(' + k + ')';
+}
+
+function fitAll() {
+  if (window.innerWidth < 768) {
+    fitMobile();
+  } else {
+    fitDesktop();
+  }
+}
+
+window.addEventListener('resize', fitAll);
+window.addEventListener('orientationchange', fitAll);
+
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', fitAll);
+}
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(fitAll);
+}
+
+window.addEventListener('load', fitAll);
+
+fitAll();
+</script>
+
+</body>
+</html>
