@@ -41,7 +41,13 @@ a {
   position: fixed;
   inset: 0;
   overflow: hidden;
-  background: #0b0b0b;
+
+  background-color: #0b0b0b;
+  background-image: url('bg-rays.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -56,31 +62,22 @@ a {
   flex: none;
   transform-origin: top center;
   overflow: hidden;
-  background: #0b0b0b;
+  background: transparent;
   color: #ffffff;
   font-family: 'Comic Neue', cursive;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
-  outline: 2px solid red;
 }
 
 .mobile-stage .background {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 120%;
-  left: 0;
-  top: calc(-10% + 50px);
-  object-fit: fill;
-  object-position: center top;
-  pointer-events: none;
+  display: none;
 }
 
 .mobile-content {
   position: relative;
   z-index: 2;
   width: 100%;
-  min-height: 100%;
+  min-height: 0;
   display: flex;
   flex-direction: column;
 }
@@ -442,8 +439,7 @@ a {
 .cta-mobile-wrap {
   display: flex;
   justify-content: center;
-  margin-top: auto;
-  transform: translateY(-100px);
+  margin-top: clamp(20px, 4vh, 40px);
 }
 
 .cta {
@@ -480,7 +476,6 @@ a {
   font-size: 13px;
   white-space: nowrap;
   color: #c9c9c9;
-  transform: translateY(-80px);
 }
 
 /* =========================================
@@ -495,7 +490,7 @@ a {
    SWITCH
    ========================================= */
 
-@media (min-width: 768px) {
+@media (min-width: 1200px), (min-width: 1024px) and (max-height: 1000px) {
 
   .mobile-page {
     display: none;
@@ -931,6 +926,9 @@ function fitMobile() {
   const viewportHeight = vv ? vv.height : window.innerHeight;
 
   const page = document.querySelector('.mobile-page');
+  const content = stage.querySelector('.mobile-content');
+
+  if (!page || !content) return;
 
   const topPadding =
     parseFloat(getComputedStyle(page).paddingTop) || 0;
@@ -939,12 +937,28 @@ function fitMobile() {
     parseFloat(getComputedStyle(page).paddingBottom) || 0;
 
   const availableHeight =
-    Math.max(120, viewportHeight - topPadding - bottomPadding);
+    Math.max(
+      120,
+      viewportHeight - topPadding - bottomPadding
+    );
 
-  const k = Math.min(1, viewportWidth / 440);
+  stage.style.transform = 'none';
+  stage.style.height = 'auto';
 
-  stage.style.height = (availableHeight / k) + 'px';
-  stage.style.transform = 'scale(' + k + ')';
+  const naturalHeight = content.scrollHeight;
+
+
+  const widthScale = viewportWidth / 440;
+
+  const heightScale = availableHeight / naturalHeight;
+
+  const scale = Math.min(
+    1,
+    widthScale,
+    heightScale
+  );
+
+  stage.style.transform = `scale(${scale})`;
 }
 
 function fitDesktop() {
