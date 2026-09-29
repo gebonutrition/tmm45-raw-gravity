@@ -43,10 +43,6 @@ a {
   overflow: hidden;
 
   background-color: #0b0b0b;
-  background-image: url('bg-rays.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
 
   display: flex;
   justify-content: center;
@@ -70,7 +66,17 @@ a {
 }
 
 .mobile-stage .background {
-  display: none;
+  display: block;
+  position: absolute;
+  inset: 0;
+  left: -10%;
+  top: -10%;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .mobile-content {
