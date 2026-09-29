@@ -43,6 +43,10 @@ a {
   overflow: hidden;
 
   background-color: #0b0b0b;
+  background-image: url('bg-rays.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
   display: flex;
   justify-content: center;
@@ -66,17 +70,7 @@ a {
 }
 
 .mobile-stage .background {
-  display: block;
-  position: absolute;
-  inset: 0;
-  left: -10%;
-  top: -10%;
-  width: 120%;
-  height: 120%;
-  object-fit: cover;
-  object-position: center center;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 .mobile-content {
@@ -926,10 +920,8 @@ function fitMobile() {
   const stage = document.getElementById('mobileStage');
   if (!stage) return;
 
-  const vv = window.visualViewport;
-
-  const viewportWidth = vv ? vv.width : window.innerWidth;
-  const viewportHeight = vv ? vv.height : window.innerHeight;
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
 
   const page = document.querySelector('.mobile-page');
   const content = stage.querySelector('.mobile-content');
@@ -993,15 +985,6 @@ function fitAll() {
 
 window.addEventListener('resize', fitAll);
 window.addEventListener('orientationchange', fitAll);
-
-if (window.visualViewport) {
-  window.visualViewport.addEventListener('resize', fitAll);
-}
-
-if (document.fonts && document.fonts.ready) {
-  document.fonts.ready.then(fitAll);
-}
-
 window.addEventListener('load', fitAll);
 
 fitAll();
